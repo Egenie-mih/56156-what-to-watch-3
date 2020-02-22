@@ -9,10 +9,10 @@ const Settings = {
 };
 
 ReactDOM.render(
-  <App
-    promoName={Settings.NAME}
-    promoGenre={Settings.GENRE}
-    promoReleaseDate={Settings.RELEASE_DATE}
-  />,
-  document.querySelector(`#root`)
+    <App
+      promoName={Settings.NAME}
+      promoGenre={Settings.GENRE}
+      promoReleaseDate={Settings.RELEASE_DATE}
+    />,
+    document.querySelector(`#root`)
 );
