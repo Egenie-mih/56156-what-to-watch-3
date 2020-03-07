@@ -13,6 +13,7 @@ const films = [
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     description: `The second installment of the "Fantastic Beasts" series featuring the adventures of Magizoologist Newt Scamander.`,
     rating: 6.6,
     ratingCount: 194096,
@@ -25,6 +26,7 @@ const films = [
     title: `Macbeth`,
     img: `img/macbeth.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `Macbeth, the Thane of Glamis, receives a prophecy from a trio of witches that one day he will become King of Scotland.`,
     rating: 2,
     ratingCount: 50692,
@@ -37,6 +39,7 @@ const films = [
     title: `Aviator`,
     img: `img/aviator.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     description: `A biopic depicting the early years of legendary Director and aviator Howard Hughes' career from the late 1920s to the mid 1940s.`,
     rating: 7.5,
     ratingCount: 318179,
@@ -49,6 +52,7 @@ const films = [
     title: `Revenant`,
     img: `img/revenant.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `A frontiersman on a fur trading expedition in the 1820s fights for survival after being mauled by a bear and left for dead by members of his own hunting team.`,
     rating: 8.0,
     ratingCount: 657196,
@@ -61,6 +65,7 @@ const films = [
     title: `Johnny English`,
     img: `img/johnny-english.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     description: `After a sudden attack on MI5, Johnny English, Britain's most confident, yet unintelligent spy, becomes Britain's only spy.`,
     rating: 4,
     ratingCount: 141308,
@@ -73,6 +78,7 @@ const films = [
     title: `Snatch`,
     img: `img/snatch.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly.`,
     rating: 8.3,
     ratingCount: 745402,
@@ -85,6 +91,7 @@ const films = [
     title: `Mindhunter`,
     img: `img/mindhunter.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     description: `Trainees in the FBI's psychological profiling program must put their training into practice when they discover a killer in their midst.`,
     rating: 6.4,
     ratingCount: 56402,
@@ -97,6 +104,7 @@ const films = [
     title: `War of the worlds`,
     img: `img/war-of-the-worlds.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `As Earth is invaded by alien tripod fighting machines, one family fights for survival in this sci-fi action film.`,
     rating: 6.5,
     ratingCount: 399402,
@@ -113,7 +121,12 @@ it(`Render Main`, () => {
       promoMovie={promoMovie}
       films={films}
       onMovieCardClick={() => {}}
-    />)
+    />,
+    {
+      createNodeMock: () => {
+        return {};
+      }
+    })
     .toJSON();
 
   expect(tree).toMatchSnapshot();
