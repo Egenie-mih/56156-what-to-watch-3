@@ -1,11 +1,11 @@
-import React from "react";
-import Enzyme, {mount} from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import VideoPlayer from "./video-player.jsx";
+import React from 'react';
+import Enzyme, {mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import VideoPlayer from './video-player.jsx';
 
 const film = {
   img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-  preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`
+  preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
 };
 
 Enzyme.configure({

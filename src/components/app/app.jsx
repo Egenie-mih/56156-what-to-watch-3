@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Main from '../main/main.jsx';
-import MoviePage from "../movie-page/movie-page.jsx";
+import MoviePage from '../movie-page/movie-page.jsx';
 
 class App extends PureComponent {
   constructor(props) {
@@ -23,14 +24,17 @@ class App extends PureComponent {
 
     if (chosenFilm) {
       return (
-        <MoviePage film={chosenFilm} />
+        <MoviePage
+          films={films}
+          film={chosenFilm}
+          onMovieCardClick={this._handleMovieCardClick}
+        />
       );
     }
 
     return (
       <Main
         promoMovie={promoMovie}
-        films={films}
         onMovieCardClick={this._handleMovieCardClick}
       />
     );
@@ -45,7 +49,7 @@ class App extends PureComponent {
             {this._renderApp()}
           </Route>
           <Route exact path="/dev-movie-page">
-            <MoviePage film={films[0]}/>
+            <MoviePage film={films[0]} onMovieCardClick={this._handleMovieCardClick}/>
           </Route>
         </Switch>
       </BrowserRouter>
@@ -63,7 +67,28 @@ App.propTypes = {
     title: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     preview: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    ratingCount: PropTypes.number.isRequired,
+    director: PropTypes.string.isRequired,
+    actors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    duration: PropTypes.string.isRequired,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+      rating: PropTypes.number.isRequired,
+      date: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired
+    })).isRequired,
   })).isRequired,
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  films: state.filmsList,
+});
+
+export {App};
+
+export default connect(mapStateToProps)(App);

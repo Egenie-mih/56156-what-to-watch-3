@@ -8,9 +8,55 @@ export default [
     rating: 6.6,
     ratingCount: 194096,
     director: `David Yates`,
-    actors: `Eddie Redmayne, Katherine Waterston, Dan Fogler`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Kids & Family`,
-    year: 2018
+    year: 2018,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 7.6,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.2,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.1,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.1,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Macbeth`,
@@ -21,9 +67,31 @@ export default [
     rating: 2,
     ratingCount: 50692,
     director: `Justin Kurzel`,
-    actors: ` Michael Fassbender, Marion Cotillard, Jack Madigan`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Dramas`,
-    year: 2015
+    year: 2015,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Aviator`,
@@ -34,9 +102,31 @@ export default [
     rating: 7.5,
     ratingCount: 318179,
     director: `Martin Scorsese`,
-    actors: `Leonardo DiCaprio, Cate Blanchett, Kate Beckinsale`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Documentary`,
-    year: 2004
+    year: 2004,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Revenant`,
@@ -47,9 +137,31 @@ export default [
     rating: 8.0,
     ratingCount: 657196,
     director: `Alejandro G. Iñárritu`,
-    actors: `Leonardo DiCaprio, Tom Hardy, Will Poulter`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Horror`,
-    year: 2015
+    year: 2015,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Johnny English`,
@@ -60,9 +172,31 @@ export default [
     rating: 4,
     ratingCount: 141308,
     director: `Peter Howitt`,
-    actors: `Rowan Atkinson, John Malkovich, Natalie Imbruglia`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Comedies`,
-    year: 2003
+    year: 2003,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Snatch`,
@@ -73,9 +207,31 @@ export default [
     rating: 8.3,
     ratingCount: 745402,
     director: `Guy Ritchie`,
-    actors: `Jason Statham, Brad Pitt, Benicio Del Toro`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Romance`,
-    year: 2000
+    year: 2000,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Mindhunter`,
@@ -86,9 +242,31 @@ export default [
     rating: 6.4,
     ratingCount: 56402,
     director: `Renny Harlin`,
-    actors: `Val Kilmer, LL Cool J, Christian Slater`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Crime`,
-    year: 2004
+    year: 2004,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `War of the worlds`,
@@ -99,8 +277,30 @@ export default [
     rating: 6.5,
     ratingCount: 399402,
     director: `Steven Spielberg`,
-    actors: ` Tom Cruise, Dakota Fanning, Tim Robbins`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Sci-Fi`,
-    year: 2005
+    year: 2005,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   }
 ];

@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import SmallMovieCard from "../small-movie-card/small-movie-card.jsx";
+import {connect} from 'react-redux';
+import SmallMovieCard from '../small-movie-card/small-movie-card.jsx';
 
 class MovieList extends PureComponent {
   constructor(props) {
@@ -40,6 +41,10 @@ class MovieList extends PureComponent {
   }
 }
 
+const mapStateToProps = (state) => ({
+  films: state.filteredFilms
+});
+
 MovieList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
@@ -49,4 +54,6 @@ MovieList.propTypes = {
   onMovieCardClick: PropTypes.func.isRequired
 };
 
-export default MovieList;
+export {MovieList};
+
+export default connect(mapStateToProps)(MovieList);

@@ -1,6 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './app.jsx';
+import {Provider} from 'react-redux';
+import configureStore from 'redux-mock-store';
+import {App} from './app.jsx';
+
+const mockStore = configureStore([]);
 
 const promoMovie = {
   title: `The Grand Budapest Hotel`,
@@ -13,14 +17,60 @@ const films = [
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `The second installment of the "Fantastic Beasts" series featuring the adventures of Magizoologist Newt Scamander.`,
     rating: 6.6,
     ratingCount: 194096,
     director: `David Yates`,
-    actors: `Eddie Redmayne, Katherine Waterston, Dan Fogler`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Kids & Family`,
-    year: 2018
+    year: 2018,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 7.6,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.2,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.1,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.1,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Macbeth`,
@@ -31,22 +81,66 @@ const films = [
     rating: 2,
     ratingCount: 50692,
     director: `Justin Kurzel`,
-    actors: ` Michael Fassbender, Marion Cotillard, Jack Madigan`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Dramas`,
-    year: 2015
+    year: 2015,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Aviator`,
     img: `img/aviator.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `A biopic depicting the early years of legendary Director and aviator Howard Hughes' career from the late 1920s to the mid 1940s.`,
     rating: 7.5,
     ratingCount: 318179,
     director: `Martin Scorsese`,
-    actors: `Leonardo DiCaprio, Cate Blanchett, Kate Beckinsale`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Documentary`,
-    year: 2004
+    year: 2004,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Revenant`,
@@ -57,22 +151,66 @@ const films = [
     rating: 8.0,
     ratingCount: 657196,
     director: `Alejandro G. Iñárritu`,
-    actors: `Leonardo DiCaprio, Tom Hardy, Will Poulter`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Horror`,
-    year: 2015
+    year: 2015,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Johnny English`,
     img: `img/johnny-english.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `After a sudden attack on MI5, Johnny English, Britain's most confident, yet unintelligent spy, becomes Britain's only spy.`,
     rating: 4,
     ratingCount: 141308,
     director: `Peter Howitt`,
-    actors: `Rowan Atkinson, John Malkovich, Natalie Imbruglia`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Comedies`,
-    year: 2003
+    year: 2003,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Snatch`,
@@ -83,22 +221,66 @@ const films = [
     rating: 8.3,
     ratingCount: 745402,
     director: `Guy Ritchie`,
-    actors: `Jason Statham, Brad Pitt, Benicio Del Toro`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Romance`,
-    year: 2000
+    year: 2000,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `Mindhunter`,
     img: `img/mindhunter.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    preview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     description: `Trainees in the FBI's psychological profiling program must put their training into practice when they discover a killer in their midst.`,
     rating: 6.4,
     ratingCount: 56402,
     director: `Renny Harlin`,
-    actors: `Val Kilmer, LL Cool J, Christian Slater`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Crime`,
-    year: 2004
+    year: 2004,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   },
   {
     title: `War of the worlds`,
@@ -109,23 +291,54 @@ const films = [
     rating: 6.5,
     ratingCount: 399402,
     director: `Steven Spielberg`,
-    actors: ` Tom Cruise, Dakota Fanning, Tim Robbins`,
+    actors: [
+      `Saoirse Ronan`,
+      `Tony Revoloru`,
+      `Tilda Swinton`,
+      `Tom Wilkinson`,
+      `Owen Wilkinson`,
+      `Adrien Brody`,
+    ],
     genre: `Sci-Fi`,
-    year: 2005
+    year: 2005,
+    duration: `2h 00m`,
+    reviews: [
+      {
+        rating: 8.9,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      },
+      {
+        rating: 8.0,
+        text: `The mannered, madcap proceedings are often delightful, occasionally silly, and here and there, gruesome and/or heartbreaking.`,
+        author: `Matthew Lickona`,
+        date: `2016-12-20`,
+      }
+    ]
   }
 ];
 
 it(`Render App`, () => {
+  const store = mockStore({
+    currentGenre: `All genres`,
+    filmsList: films,
+    filteredFilms: films,
+  });
+
   const tree = renderer
-    .create(<App
-      promoMovie={promoMovie}
-      films={films}
-    />,
-    {
-      createNodeMock: () => {
-        return {};
-      }
-    })
+    .create(
+        <Provider store={store}>
+          <App
+            promoMovie={promoMovie}
+            films={films}
+          />
+        </Provider>,
+        {
+          createNodeMock: () => {
+            return {};
+          }
+        })
     .toJSON();
 
   expect(tree).toMatchSnapshot();
