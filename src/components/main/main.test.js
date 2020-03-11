@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/app/app.jsx';
+import React from "react";
+import renderer from "react-test-renderer";
+import Main from "./main.jsx";
 
 const promoMovie = {
   title: `The Grand Budapest Hotel`,
@@ -31,10 +31,14 @@ const allTitles = [
   `Avatar`
 ];
 
-ReactDOM.render(
-    <App
+it(`Render Main`, () => {
+  const tree = renderer
+    .create(<Main
       promoMovie={promoMovie}
       allMovies={allTitles}
-    />,
-    document.querySelector(`#root`)
-);
+      onMovieTitleClick={() => {}}
+    />)
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});

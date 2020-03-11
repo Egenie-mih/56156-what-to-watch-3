@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Main = ({promoName, promoGenre, promoReleaseDate, allMovies}) => {
+const Main = ({promoMovie, allMovies, onMovieTitleClick}) => {
   return (
     <React.Fragment>
       <section className="movie-card">
@@ -34,10 +34,10 @@ const Main = ({promoName, promoGenre, promoReleaseDate, allMovies}) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{promoName}</h2>
+              <h2 className="movie-card__title">{promoMovie.title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{promoGenre}</span>
-                <span className="movie-card__year">{promoReleaseDate}</span>
+                <span className="movie-card__genre">{promoMovie.genre}</span>
+                <span className="movie-card__year">{promoMovie.release}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -104,7 +104,7 @@ const Main = ({promoName, promoGenre, promoReleaseDate, allMovies}) => {
                     <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt={movie} width="280" height="175"/>
                   </div>
                   <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">{movie}</a>
+                    <a onClick={onMovieTitleClick} className="small-movie-card__link" href="movie-page.html">{movie}</a>
                   </h3>
                 </article>
               );
@@ -135,10 +135,13 @@ const Main = ({promoName, promoGenre, promoReleaseDate, allMovies}) => {
 };
 
 Main.propTypes = {
-  promoName: PropTypes.string.isRequired,
-  promoGenre: PropTypes.string.isRequired,
-  promoReleaseDate: PropTypes.number.isRequired,
-  allMovies: PropTypes.arrayOf(PropTypes.string).isRequired
+  promoMovie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    release: PropTypes.number.isRequired,
+  }).isRequired,
+  allMovies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onMovieTitleClick: PropTypes.func.isRequired
 };
 
 export default Main;
