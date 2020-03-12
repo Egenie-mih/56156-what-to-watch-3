@@ -4,11 +4,11 @@ import Main from '../main/main.jsx';
 
 const movieTitleClickHandler = () => {};
 
-const App = ({promoMovie, allMovies}) => {
+const App = ({promoMovie, films}) => {
   return (
     <Main
       promoMovie={promoMovie}
-      allMovies={allMovies}
+      films={films}
       onMovieTitleClick={movieTitleClickHandler}
     />
   );
@@ -20,9 +20,10 @@ App.propTypes = {
     genre: PropTypes.string.isRequired,
     release: PropTypes.number.isRequired,
   }).isRequired,
-  allMovies: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-  ).isRequired
+  films: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default App;

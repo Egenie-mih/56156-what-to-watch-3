@@ -9,27 +9,39 @@ const promoMovie = {
   release: 2014
 };
 
-const allTitles = [
-  `Fantastic Beasts: The Crimes of Grindelwald`,
-  `Bohemian Rhapsody`,
-  `Macbeth`,
-  `Aviator`,
-  `We need to talk about Kevin`,
-  `What We Do in the Shadows`,
-  `Revenant`,
-  `Johnny English`,
-  `Shutter Island`,
-  `Pulp Fiction`,
-  `No Country for Old Men`,
-  `Snatch`,
-  `Moonrise Kingdom`,
-  `Seven Years in Tibet`,
-  `Midnight Special`,
-  `War of the Worlds`,
-  `Dardjeeling Limited`,
-  `Orlando`,
-  `Mindhunter`,
-  `Avatar`
+const films = [
+  {
+    title: `Fantastic Beasts: The Crimes of Grindelwald`,
+    img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+  },
+  {
+    title: `Macbeth`,
+    img: `img/macbeth.jpg`,
+  },
+  {
+    title: `Aviator`,
+    img: `img/aviator.jpg`,
+  },
+  {
+    title: `Revenant`,
+    img: `img/revenant.jpg`,
+  },
+  {
+    title: `Johnny English`,
+    img: `img/johnny-english.jpg`,
+  },
+  {
+    title: `Snatch`,
+    img: `img/snatch.jpg`,
+  },
+  {
+    title: `Mindhunter`,
+    img: `img/mindhunter.jpg`,
+  },
+  {
+    title: `War of the worlds`,
+    img: `img/war-of-the-worlds.jpg`,
+  },
 ];
 
 Enzyme.configure({
@@ -42,7 +54,7 @@ it(`Should movie title be clicked`, () => {
   const main = shallow(
       <Main
         promoMovie={promoMovie}
-        allMovies={allTitles}
+        films={films}
         onMovieTitleClick={onMovieTitleClick}
       />
   );
@@ -53,5 +65,5 @@ it(`Should movie title be clicked`, () => {
     movieTitleLink.simulate(`click`);
   });
 
-  expect(onMovieTitleClick.mock.calls.length).toBe(allTitles.length);
+  expect(onMovieTitleClick.mock.calls.length).toBe(movieTitleLinks.length);
 });
