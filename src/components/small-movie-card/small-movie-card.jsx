@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SmallMovieCard = ({film, onMovieMouseOver, onMovieMouseOut, onMovieTitleClick}) => {
+const SmallMovieCard = ({film, onMovieCardMouseOver, onMovieCardMouseOut, onMovieCardClick}) => {
   const {title, img} = film;
 
   return (
     <article
       onMouseOver={() => {
-        onMovieMouseOver(film);
+        onMovieCardMouseOver(film);
       }}
       onMouseOut={() => {
-        onMovieMouseOut();
+        onMovieCardMouseOut();
+      }}
+      onClick={() => {
+        onMovieCardClick(film);
       }}
       className="small-movie-card catalog__movies-card"
     >
@@ -18,7 +21,16 @@ const SmallMovieCard = ({film, onMovieMouseOver, onMovieMouseOut, onMovieTitleCl
         <img src={img} alt="" width="280" height="175" />
       </div>
       <h3 className="small-movie-card__title">
-        <a onClick={onMovieTitleClick} className="small-movie-card__link" href="movie-page.html">{title}</a>
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+            onMovieCardClick(film);
+          }}
+          className="small-movie-card__link"
+          href="movie-page.html"
+        >
+          {title}
+        </a>
       </h3>
     </article>
   );
@@ -29,9 +41,9 @@ SmallMovieCard.propTypes = {
     title: PropTypes.string,
     img: PropTypes.string,
   }).isRequired,
-  onMovieMouseOver: PropTypes.func.isRequired,
-  onMovieMouseOut: PropTypes.func.isRequired,
-  onMovieTitleClick: PropTypes.func.isRequired,
+  onMovieCardMouseOver: PropTypes.func.isRequired,
+  onMovieCardMouseOut: PropTypes.func.isRequired,
+  onMovieCardClick: PropTypes.func.isRequired,
 };
 
 export default SmallMovieCard;

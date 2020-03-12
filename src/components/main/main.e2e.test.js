@@ -48,22 +48,22 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-it(`Should movie title be clicked`, () => {
-  const onMovieTitleClick = jest.fn();
+it(`Handler onMovieCardClick get correct data`, () => {
+  const onMovieCardClick = jest.fn();
 
   const main = shallow(
       <Main
         promoMovie={promoMovie}
         films={films}
-        onMovieTitleClick={onMovieTitleClick}
+        onMovieCardClick={onMovieCardClick}
       />
   );
 
-  const movieTitleLinks = main.find(`.small-movie-card__link`);
+  const movieCardLinks = main.find(`.small-movie-card`);
 
-  movieTitleLinks.forEach((movieTitleLink) => {
-    movieTitleLink.simulate(`click`);
+  movieCardLinks.forEach((movieCardLink) => {
+    movieCardLink.simulate(`click`);
   });
 
-  expect(onMovieTitleClick.mock.calls.length).toBe(movieTitleLinks.length);
+  expect(onMovieCardClick.mock.calls.length).toBe(movieCardLinks.length);
 });

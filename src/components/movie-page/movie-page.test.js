@@ -1,6 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import SmallMovieCard from './small-movie-card';
+import React from "react";
+import renderer from "react-test-renderer";
+import MoviePage from "./movie-page.jsx";
 
 const film = {
   title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -15,13 +15,10 @@ const film = {
   year: 2018
 };
 
-it(`SmallMovieCard should render correctly`, () => {
+it(`MoviePage should render correctly`, () => {
   const tree = renderer
-    .create(<SmallMovieCard
+    .create(<MoviePage
       film={film}
-      onMovieCardMouseOver={() => {}}
-      onMovieCardMouseOut={() => {}}
-      onMovieCardClick={() => {}}
     />)
     .toJSON();
 
