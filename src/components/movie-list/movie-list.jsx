@@ -7,17 +7,17 @@ class MovieList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {activeCard: null};
-    this._handleMovieCardMouseOver = this._handleMovieCardMouseOver.bind(this);
-    this._handleMovieCardMouseOut = this._handleMovieCardMouseOut.bind(this);
+    this._onMovieCardMouseOver = this._onMovieCardMouseOver.bind(this);
+    this._onMovieCardMouseOut = this._onMovieCardMouseOut.bind(this);
   }
 
-  _handleMovieCardMouseOver(card) {
+  _onMovieCardMouseOver(card) {
     this.setState({
       activeCard: card,
     });
   }
 
-  _handleMovieCardMouseOut() {
+  _onMovieCardMouseOut() {
     this.setState({
       activeCard: null,
     });
@@ -29,10 +29,10 @@ class MovieList extends PureComponent {
       films.map((film) => {
         return (
           <SmallMovieCard
-            key={film.title}
+            key={film.id}
             film={film}
-            onMovieCardMouseOver={this._handleMovieCardMouseOver}
-            onMovieCardMouseOut={this._handleMovieCardMouseOut}
+            onMovieCardMouseOver={this._onMovieCardMouseOver}
+            onMovieCardMouseOut={this._onMovieCardMouseOut}
             onMovieCardClick={onMovieCardClick}
           />
         );
@@ -42,11 +42,12 @@ class MovieList extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  films: state.filteredFilms
+  films: state.showedFilms
 });
 
 MovieList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     preview: PropTypes.string.isRequired,

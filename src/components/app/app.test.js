@@ -7,6 +7,7 @@ import {App} from './app.jsx';
 const mockStore = configureStore([]);
 
 const promoMovie = {
+  id: `1`,
   title: `The Grand Budapest Hotel`,
   genre: `Drama`,
   release: 2014
@@ -14,6 +15,7 @@ const promoMovie = {
 
 const films = [
   {
+    id: `1`,
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -73,6 +75,7 @@ const films = [
     ]
   },
   {
+    id: `2`,
     title: `Macbeth`,
     img: `img/macbeth.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -108,6 +111,7 @@ const films = [
     ]
   },
   {
+    id: `3`,
     title: `Aviator`,
     img: `img/aviator.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -143,6 +147,7 @@ const films = [
     ]
   },
   {
+    id: `4`,
     title: `Revenant`,
     img: `img/revenant.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -178,6 +183,7 @@ const films = [
     ]
   },
   {
+    id: `5`,
     title: `Johnny English`,
     img: `img/johnny-english.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -213,6 +219,7 @@ const films = [
     ]
   },
   {
+    id: `6`,
     title: `Snatch`,
     img: `img/snatch.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -248,6 +255,7 @@ const films = [
     ]
   },
   {
+    id: `7`,
     title: `Mindhunter`,
     img: `img/mindhunter.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -283,6 +291,7 @@ const films = [
     ]
   },
   {
+    id: `8`,
     title: `War of the worlds`,
     img: `img/war-of-the-worlds.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -324,6 +333,8 @@ it(`Render App`, () => {
     currentGenre: `All genres`,
     filmsList: films,
     filteredFilms: films,
+    showedFilms: films.slice(0, 8),
+    filmsToShowCount: 8,
   });
 
   const tree = renderer

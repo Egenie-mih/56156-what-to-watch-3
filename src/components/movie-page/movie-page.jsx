@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import Tabs from '../tabs/tabs.jsx';
 import MovieList from '../movie-list/movie-list.jsx';
 
-const MoviePage = ({film, onMovieCardClick}) => {
+const MoviePage = (props) => {
+  const {film, films, onMovieCardClick} = props;
+
+  const similarFilms = films.filter((item) => item.genre === film.genre && item.id !== film.id).slice(0, 4);
+
   return (
     <React.Fragment>
       <section className="movie-card movie-card--full">
@@ -72,7 +76,7 @@ const MoviePage = ({film, onMovieCardClick}) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title"> More like this </h2>
           <div className="catalog__movies-list">
-            <MovieList onMovieCardClick={onMovieCardClick} />
+            <MovieList films={similarFilms} onMovieCardClick={onMovieCardClick} />
           </div>
         </section>
         <footer className="page-footer">
@@ -95,6 +99,7 @@ const MoviePage = ({film, onMovieCardClick}) => {
 
 MoviePage.propTypes = {
   film: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
@@ -113,6 +118,13 @@ MoviePage.propTypes = {
       text: PropTypes.string.isRequired
     })).isRequired,
   }).isRequired,
+  films: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+  })).isRequired,
   onMovieCardClick: PropTypes.func.isRequired
 };
 

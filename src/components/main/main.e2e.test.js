@@ -11,45 +11,23 @@ const promoMovie = {
 
 const films = [
   {
+    id: `1`,
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
   {
+    id: `2`,
     title: `Macbeth`,
     img: `img/macbeth.jpg`,
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
   },
   {
+    id: `3`,
     title: `Aviator`,
     img: `img/aviator.jpg`,
     preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  },
-  {
-    title: `Revenant`,
-    img: `img/revenant.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  },
-  {
-    title: `Johnny English`,
-    img: `img/johnny-english.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  },
-  {
-    title: `Snatch`,
-    img: `img/snatch.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  },
-  {
-    title: `Mindhunter`,
-    img: `img/mindhunter.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  },
-  {
-    title: `War of the worlds`,
-    img: `img/war-of-the-worlds.jpg`,
-    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  },
+  }
 ];
 
 Enzyme.configure({

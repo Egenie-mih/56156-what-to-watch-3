@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GenreList from '../genre-list/genre-list.jsx';
 import MovieList from '../movie-list/movie-list.jsx';
+import ShowMoreButton from "../show-more-button/show-more-button.jsx";
 
 const Main = ({promoMovie, onMovieCardClick}) => {
   return (
@@ -71,7 +72,7 @@ const Main = ({promoMovie, onMovieCardClick}) => {
             <MovieList onMovieCardClick={onMovieCardClick} />
           </div>
           <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
+            <ShowMoreButton />
           </div>
         </section>
 

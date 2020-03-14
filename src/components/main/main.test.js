@@ -7,6 +7,7 @@ import Main from './main.jsx';
 const mockStore = configureStore([]);
 
 const promoMovie = {
+  id: `1`,
   title: `The Grand Budapest Hotel`,
   genre: `Drama`,
   release: 2014
@@ -324,6 +325,7 @@ it(`Render Main`, () => {
     currentGenre: `All genres`,
     filmsList: films,
     filteredFilms: films,
+    showedFilms: films,
   });
 
   const tree = renderer

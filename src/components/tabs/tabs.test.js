@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import Tabs from './tabs.jsx';
 
 const film = {
+  id: `1`,
   title: `War of the worlds`,
   img: `img/war-of-the-worlds.jpg`,
   poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -21,7 +22,7 @@ const film = {
   ],
   genre: `Sci-Fi`,
   year: 2005,
-  duration: 100,
+  duration: `2h`,
   reviews: [
     {
       rating: 8.9,

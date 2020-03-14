@@ -36,7 +36,7 @@ class Tabs extends React.PureComponent {
     };
   }
 
-  _handleTabClick(navItem) {
+  _onTabClick(navItem) {
     this.setState({currentTab: navItem});
   }
 
@@ -55,7 +55,7 @@ class Tabs extends React.PureComponent {
                 className="movie-nav__link"
                 onClick={(evt) => {
                   evt.preventDefault();
-                  this._handleTabClick(TabName.OVERVIEW);
+                  this._onTabClick(TabName.OVERVIEW);
                 }}
               >
                 {TabName.OVERVIEW}
@@ -67,7 +67,7 @@ class Tabs extends React.PureComponent {
                 className="movie-nav__link"
                 onClick={(evt) => {
                   evt.preventDefault();
-                  this._handleTabClick(TabName.DETAILS);
+                  this._onTabClick(TabName.DETAILS);
                 }}
               >
                 {TabName.DETAILS}
@@ -79,7 +79,7 @@ class Tabs extends React.PureComponent {
                 className="movie-nav__link"
                 onClick={(evt) => {
                   evt.preventDefault();
-                  this._handleTabClick(TabName.REVIEWS);
+                  this._onTabClick(TabName.REVIEWS);
                 }}
               >
                 {TabName.REVIEWS}

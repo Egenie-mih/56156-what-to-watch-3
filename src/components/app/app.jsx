@@ -10,10 +10,10 @@ class App extends PureComponent {
     super(props);
     this.state = {chosenFilm: null};
     this._renderApp = this._renderApp.bind(this);
-    this._handleMovieCardClick = this._handleMovieCardClick.bind(this);
+    this._onMovieCardClick = this._onMovieCardClick.bind(this);
   }
 
-  _handleMovieCardClick(film) {
+  _onMovieCardClick(film) {
     this.setState({
       chosenFilm: film
     });
@@ -27,7 +27,7 @@ class App extends PureComponent {
         <MoviePage
           films={films}
           film={chosenFilm}
-          onMovieCardClick={this._handleMovieCardClick}
+          onMovieCardClick={this._onMovieCardClick}
         />
       );
     }
@@ -35,7 +35,7 @@ class App extends PureComponent {
     return (
       <Main
         promoMovie={promoMovie}
-        onMovieCardClick={this._handleMovieCardClick}
+        onMovieCardClick={this._onMovieCardClick}
       />
     );
   }
@@ -49,7 +49,7 @@ class App extends PureComponent {
             {this._renderApp()}
           </Route>
           <Route exact path="/dev-movie-page">
-            <MoviePage film={films[0]} onMovieCardClick={this._handleMovieCardClick}/>
+            <MoviePage film={films[0]} onMovieCardClick={this._onMovieCardClick}/>
           </Route>
         </Switch>
       </BrowserRouter>

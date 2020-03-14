@@ -11,6 +11,10 @@ class SmallMovieCard extends PureComponent {
     };
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timeoutOnMouseOver);
+  }
+
   render() {
     const {film, onMovieCardMouseOver, onMovieCardMouseOut, onMovieCardClick} = this.props;
     const {title, img, preview} = film;

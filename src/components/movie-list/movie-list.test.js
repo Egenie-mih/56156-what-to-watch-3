@@ -8,6 +8,7 @@ const mockStore = configureStore([]);
 
 const films = [
   {
+    id: `1`,
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -67,6 +68,7 @@ const films = [
     ]
   },
   {
+    id: `2`,
     title: `Mindhunter`,
     img: `img/mindhunter.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
@@ -108,13 +110,13 @@ it(`MovieList should render correctly`, () => {
     currentGenre: `All genres`,
     filmsList: films,
     filteredFilms: films,
+    showedFilms: films
   });
 
   const tree = renderer
       .create(
           <Provider store={store}>
             <MovieList
-              films={films}
               onMovieCardClick={() => {}}
             />
           </Provider>,

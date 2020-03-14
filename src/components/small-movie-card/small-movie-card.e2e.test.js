@@ -8,6 +8,7 @@ Enzyme.configure({
 });
 
 const film = {
+  id: `1`,
   title: `Fantastic Beasts: The Crimes of Grindelwald`,
   img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
   poster: `img/bg-the-grand-budapest-hotel.jpg`,
