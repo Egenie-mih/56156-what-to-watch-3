@@ -4,9 +4,7 @@ import Tabs from '../tabs/tabs.jsx';
 import MovieList from '../movie-list/movie-list.jsx';
 
 const MoviePage = (props) => {
-  const {film, films, onMovieCardClick} = props;
-
-  const similarFilms = films.filter((item) => item.genre === film.genre && item.id !== film.id).slice(0, 4);
+  const {film, onMovieCardClick} = props;
 
   return (
     <React.Fragment>
@@ -76,7 +74,7 @@ const MoviePage = (props) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title"> More like this </h2>
           <div className="catalog__movies-list">
-            <MovieList films={similarFilms} onMovieCardClick={onMovieCardClick} />
+            <MovieList onMovieCardClick={onMovieCardClick} />
           </div>
         </section>
         <footer className="page-footer">
@@ -118,13 +116,6 @@ MoviePage.propTypes = {
       text: PropTypes.string.isRequired
     })).isRequired,
   }).isRequired,
-  films: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    preview: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-  })).isRequired,
   onMovieCardClick: PropTypes.func.isRequired
 };
 
