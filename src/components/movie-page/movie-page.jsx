@@ -4,7 +4,7 @@ import Tabs from '../tabs/tabs.jsx';
 import MovieList from '../movie-list/movie-list.jsx';
 
 const MoviePage = (props) => {
-  const {film, onMovieCardClick} = props;
+  const {film, onMovieCardClick, films} = props;
 
   return (
     <React.Fragment>
@@ -74,7 +74,7 @@ const MoviePage = (props) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title"> More like this </h2>
           <div className="catalog__movies-list">
-            <MovieList onMovieCardClick={onMovieCardClick} />
+            <MovieList films={films} onMovieCardClick={onMovieCardClick} />
           </div>
         </section>
         <footer className="page-footer">

@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import GenreList from '../genre-list/genre-list.jsx';
 import MovieList from '../movie-list/movie-list.jsx';
 import ShowMoreButton from "../show-more-button/show-more-button.jsx";
+import withActiveItem from "../../hocs/with-active-item/with-active-item";
 
-const Main = ({promoMovie, onMovieCardClick}) => {
+const GenreListWrapped = withActiveItem(GenreList);
+
+const Main = ({films, promoMovie, onMovieCardClick}) => {
   return (
     <React.Fragment>
       <section className="movie-card">
@@ -66,10 +69,10 @@ const Main = ({promoMovie, onMovieCardClick}) => {
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          <GenreList />
+          <GenreListWrapped />
 
           <div className="catalog__movies-list">
-            <MovieList onMovieCardClick={onMovieCardClick} />
+            <MovieList films={films} onMovieCardClick={onMovieCardClick} />
           </div>
           <div className="catalog__more">
             <ShowMoreButton />

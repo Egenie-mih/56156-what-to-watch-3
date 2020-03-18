@@ -2,7 +2,6 @@ import {extend} from './utils.js';
 import films from './mocks/films.js';
 
 const initialState = {
-  currentGenre: `All genres`,
   filmsList: films,
   filteredFilms: films,
   showedFilms: films.slice(0, 8),
@@ -10,20 +9,15 @@ const initialState = {
 };
 
 const ActionType = {
-  CHANGE_GENRE: `CHANGE_GENRE`,
   GET_FILTERED_FILMS: `GET_FILTERED_FILMS`,
   SHOW_MORE_FILMS: `SHOW_MORE_FILMS`,
   RESET_FILMS_COUNT: `RESET_FILMS_COUNT`,
 };
 
 const ActionCreator = {
-  changeGenre: (chosenGenre) => ({
-    type: ActionType.CHANGE_GENRE,
-    payload: chosenGenre,
-  }),
-
-  setNewFilmsList: () => ({
-    type: ActionType.GET_FILTERED_FILMS
+  setNewFilmsList: (genre) => ({
+    type: ActionType.GET_FILTERED_FILMS,
+    payload: genre
   }),
 
   showMoreFilms: () => ({
@@ -38,22 +32,17 @@ const ActionCreator = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.CHANGE_GENRE:
-      return extend(state, {
-        currentGenre: action.payload,
-      });
-
     case ActionType.GET_FILTERED_FILMS:
-      const {currentGenre, filmsList} = state;
+      const {filmsList} = state;
 
-      if (currentGenre === `All genres`) {
+      if (action.payload === `All genres`) {
         return extend(state, {
           filteredFilms: filmsList
         });
       }
 
       return extend(state, {
-        filteredFilms: filmsList.filter((film) => film.genre === currentGenre),
+        filteredFilms: filmsList.filter((film) => film.genre === action.payload),
       });
 
     case ActionType.SHOW_MORE_FILMS:

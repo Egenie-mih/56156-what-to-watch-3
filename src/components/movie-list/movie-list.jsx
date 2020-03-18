@@ -1,26 +1,13 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 import SmallMovieCard from '../small-movie-card/small-movie-card.jsx';
+import withVideo from '../../hocs/with-video/with-video.js';
 
-class MovieList extends PureComponent {
+const MovieCardWrapper = withVideo(SmallMovieCard);
+
+class MovieList extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = {activeCard: null};
-    this._onMovieCardMouseOver = this._onMovieCardMouseOver.bind(this);
-    this._onMovieCardMouseOut = this._onMovieCardMouseOut.bind(this);
-  }
-
-  _onMovieCardMouseOver(card) {
-    this.setState({
-      activeCard: card,
-    });
-  }
-
-  _onMovieCardMouseOut() {
-    this.setState({
-      activeCard: null,
-    });
   }
 
   render() {
@@ -28,11 +15,9 @@ class MovieList extends PureComponent {
     return (
       films.map((film) => {
         return (
-          <SmallMovieCard
+          <MovieCardWrapper
             key={film.id}
             film={film}
-            onMovieCardMouseOver={this._onMovieCardMouseOver}
-            onMovieCardMouseOut={this._onMovieCardMouseOut}
             onMovieCardClick={onMovieCardClick}
           />
         );
@@ -41,9 +26,6 @@ class MovieList extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => ({
-  films: state.showedFilms
-});
 
 MovieList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
@@ -55,6 +37,4 @@ MovieList.propTypes = {
   onMovieCardClick: PropTypes.func.isRequired
 };
 
-export {MovieList};
-
-export default connect(mapStateToProps)(MovieList);
+export default MovieList;
