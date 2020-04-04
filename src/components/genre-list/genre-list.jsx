@@ -31,6 +31,8 @@ const GenreList = ({activeItem, onItemClick, onGenreButtonClick}) => {
 };
 
 GenreList.propTypes = {
+  activeItem: PropTypes.string.isRequired,
+  onItemClick: PropTypes.func.isRequired,
   onGenreButtonClick: PropTypes.func.isRequired,
 };
 

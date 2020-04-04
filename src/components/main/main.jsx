@@ -98,6 +98,26 @@ const Main = ({films, promoMovie, onMovieCardClick}) => {
 };
 
 Main.propTypes = {
+  films: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    ratingCount: PropTypes.number.isRequired,
+    director: PropTypes.string.isRequired,
+    actors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    duration: PropTypes.string.isRequired,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+      rating: PropTypes.number.isRequired,
+      date: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired
+    })).isRequired,
+  })).isRequired,
   promoMovie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
