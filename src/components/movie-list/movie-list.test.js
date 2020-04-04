@@ -7,6 +7,7 @@ const films = [
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     img: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     description: `The second installment of the "Fantastic Beasts" series featuring the adventures of Magizoologist Newt Scamander.`,
     rating: 6.6,
     ratingCount: 194096,
@@ -19,6 +20,7 @@ const films = [
     title: `Macbeth`,
     img: `img/macbeth.jpg`,
     poster: `img/bg-the-grand-budapest-hotel.jpg`,
+    preview: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     description: `Macbeth, the Thane of Glamis, receives a prophecy from a trio of witches that one day he will become King of Scotland.`,
     rating: 2,
     ratingCount: 50692,
@@ -34,7 +36,12 @@ it(`MovieList should render correctly`, () => {
       .create(<MovieList
         films={films}
         onMovieCardClick={() => {}}
-      />)
+      />,
+      {
+        createNodeMock: () => {
+          return {};
+        }
+      })
     .toJSON();
 
   expect(tree).toMatchSnapshot();

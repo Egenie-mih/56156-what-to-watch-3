@@ -44,6 +44,7 @@ MovieList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
+    preview: PropTypes.string.isRequired,
   })).isRequired,
   onMovieCardClick: PropTypes.func.isRequired
 };
